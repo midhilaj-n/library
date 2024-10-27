@@ -13,6 +13,17 @@ body{
     min-height: 100vh;
     background-color: #e5e5e5;
 }
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Low opacity black */
+    z-index: 1;
+  }
 /* Nav section styling */
 
 nav{
@@ -23,6 +34,10 @@ nav{
     height: 80px;
     padding: 20px 130px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main{
+    position: relative;
 }
 
 .logo-text{
@@ -55,7 +70,7 @@ main{
     justify-content: center;
 }
 
-.add-book button{
+.add-btn{
     border: none;
     outline: none;
     padding: 20px 30px;
@@ -64,17 +79,76 @@ main{
     border-radius: 10px;
     font-weight: bold;
     font-size: 22px;
+    margin-bottom: 15px;
     transition: background-color 0.3s ease;
 }
 
-.add-book button:hover{
+.add-btn:hover{
     background-color: #c3c3c3;
 }
 
-.add-book-form{
+.form-container {
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #f0eef0;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
     display: none;
-}
+    z-index: 1;
+  }
+  
+  /* Header styling */
+  h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Input fields styling */
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  /* Checkbox styling */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  .checkbox-container label{
+    margin-right: 8px;
+
+  }
+  
+  /* Submit button styling */
+  .submit-btn {
+    background-color: #90ee90;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #76c776;
+  }
+
 
 .book-container{
     margin-top: 20px;
