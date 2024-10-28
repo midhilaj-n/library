@@ -27,7 +27,7 @@ body{
 /* Nav section styling */
 
 nav{
-    background-color: #fff;
+    background-color: #2C3E50;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,6 +44,7 @@ main{
     font-size: 36px;
     font-weight: bold;
     cursor: pointer;
+    color: #ECF0F1;
 }
 
 .login-btn{
@@ -54,6 +55,12 @@ main{
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
+    background-color: #3498DB;
+    color: #F4F4F4;
+}
+
+.login-btn:hover{
+    background-color: #2980B9;
 }
 
 
