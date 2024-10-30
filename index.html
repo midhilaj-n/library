@@ -21,12 +21,12 @@
         <div class="form-container">
             <h2>Add new book</h2>
             <form>
-              <input type="text" placeholder="Title" required>
-              <input type="text" placeholder="Author" required>
-              <input type="number" placeholder="Pages" min="1" required>
+              <input type="text" placeholder="Title" id="book-title" required>
+              <input type="text" placeholder="Author" id="book-author" required>
+              <input type="number" placeholder="Pages" min="1" id="book-pages" required>
               <div class="checkbox-container">
                 <label for="read">Have you read it?</label>
-                <input type="checkbox" id="read">
+                <input type="checkbox" id="is-read" value="I read">
               </div>
               <button type="submit" class="submit-btn">Submit</button>
             </form>
