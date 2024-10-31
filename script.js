@@ -45,12 +45,59 @@ function addBookToLibrary() {
     const isRead = document.getElementById('is-read');
     submitBtn.addEventListener('click' , () => {
         event.preventDefault();
-        console.log(bookTitle.value , bookAuthor.value, bookPages.value , isRead.checked);
-        bookTitle.value = ``;
-        bookAuthor.value = '';
-        bookPages.value = '';
-        isRead.checked = false;
+        if (bookTitle.value && bookAuthor.value && bookPages.value) {
+            const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, isRead.checked);
+            myLibrary.push(newBook);
+
+            displayBooks(myLibrary);
+
+            // Clear input fields
+            bookTitle.value = '';
+            bookAuthor.value = '';
+            bookPages.value = '';
+            isRead.checked = false;
+        } else {
+            alert("Please fill in all fields before submitting.");
+        }
     
     }); 
 
+}
+
+function displayBooks(booksArray){
+    const bookContainer = document.querySelector(".book-container");
+    bookContainer.innerHTML = ``
+ 
+    booksArray.forEach((book, index) => {
+        const bookItem = document.createElement("div");
+        bookItem.classList.add("book");
+
+        bookItem.innerHTML = `
+          <p class="book-title">${book.book}</p>
+          <p class="book-author">${book.author}</p>
+          <p class="book-pages">${book.pages}</p>
+          <button class="read-btn ${book.isRead ? "read" : "unread"}">${book.isRead ? "Unread" : "Read"}</button>
+          <button class="remove-btn">Remove</button>`;
+
+        bookContainer.appendChild(bookItem);
+
+        const readBtn = bookItem.querySelector('.read-btn');
+
+        readBtn.addEventListener('click', () => {
+            // Toggle the read status and update button text
+            book.isRead = !book.isRead;
+            readBtn.textContent = book.isRead ? "Unread" : "Read";
+            readBtn.className = `read-btn ${book.isRead ? "read" : "unread"}`;
+        });
+
+        const removeBtn = bookItem.querySelector('.remove-btn');
+
+        removeBtn.addEventListener('click', () => {
+            // Remove the book from the array and update the display
+            booksArray.splice(index, 1);
+            displayBooks(booksArray);
+        });
+    })
+
+   
 }

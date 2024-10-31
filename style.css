@@ -125,6 +125,31 @@ main{
     border-radius: 8px;
     font-size: 16px;
   }
+
+  .read-btn.read {
+    background-color: #B6FFA1;
+    color: black;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.read-btn.unread {
+    background-color: #f28b82; 
+    color: black;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.read-btn.read:hover{
+    background-color: #9ced85;
+}
+
+.read-btn.unread:hover{
+    background-color: #f07a70; 
+}
+
   
   /* Checkbox styling */
   .checkbox-container {
@@ -191,7 +216,7 @@ main{
     cursor: pointer;
 }
 
-.book .read-btn{
+/* .book .read-btn{
     background-color: #B6FFA1;
     font-size: 16px;
     font-weight: 500;
@@ -199,7 +224,7 @@ main{
 
 .book .read-btn:hover{
     background-color: #9ced85;
-}
+} */
 
 .book .remove-btn{
     font-size: 16px;
